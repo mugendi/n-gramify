@@ -1,4 +1,5 @@
 var _ = require("lodash");
+var split= require('split-words')
 
 module.exports=function ngrams(s,ngrams,filterShort){
 	
@@ -7,21 +8,20 @@ module.exports=function ngrams(s,ngrams,filterShort){
 	filterShort= filterShort || true;
 	 
 	 //get all words in string
-	var words = s.split(" ");
-	var tokens =[],
-		chunks=[];
+	var words = split(s);
+	var tokens =[];
 
 	for(var i=0; i< ngrams; i++){
 		//console.log(i)
-		chunks=_.chunk(words.slice(i),ngrams);
-		console.log(chunks)
-	 	tokens=_.union( tokens, chunks )
+	 	tokens=_.union( tokens, _.chunk(_.slice(words,i),ngrams) )
 	}
 
-	/*//filter short tokens
+	//filter short tokens
 	if(filterShort){
 		tokens=_.filter(tokens, function(val){
-		return val.length==ngrams
-	});*/
-	 
-};
+			return (val.length==ngrams)
+		});
+	}
+
+	return tokens
+}

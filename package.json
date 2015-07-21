@@ -1,0 +1,29 @@
+{
+  "name": "n-gramify",
+  "version": "1.0.0",
+  "description": "The easiest way to create word ngrams.",
+  "main": "gramify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mugendi/n-gramify.git"
+  },
+  "keywords": [
+    "words",
+    "split",
+    "ngram",
+    "ngrams"
+  ],
+  "author": "Anthony Mugendi (ngurumugz@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mugendi/n-gramify/issues"
+  },
+  "homepage": "https://github.com/mugendi/n-gramify",
+  "dependencies": {
+    "lodash": "^3.10.0",
+    "split-words": "^1.0.0"
+  }
+}
